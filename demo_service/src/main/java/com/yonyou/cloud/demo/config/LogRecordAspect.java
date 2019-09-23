@@ -18,7 +18,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Slf4j
 @Aspect
 @Configuration
-public class LogRecodeAspect {
+public class LogRecordAspect {
 
 
   @Pointcut("execution(public * com.yonyou.cloud.demo.controller.*.*(..)))")

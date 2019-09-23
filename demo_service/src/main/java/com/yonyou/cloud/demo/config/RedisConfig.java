@@ -3,7 +3,6 @@ package com.yonyou.cloud.demo.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.net.UnknownHostException;
 import java.time.Duration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,8 +36,7 @@ public class RedisConfig extends CachingConfigurerSupport {
   @Bean
   @ConditionalOnMissingBean(name = "redisTemplate")
   public RedisTemplate<String, Object> redisTemplate(
-      RedisConnectionFactory redisConnectionFactory)
-      throws UnknownHostException {
+      RedisConnectionFactory redisConnectionFactory) {
     Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(
         Object.class);
     ObjectMapper om = new ObjectMapper();
@@ -57,7 +55,6 @@ public class RedisConfig extends CachingConfigurerSupport {
 
   @Bean
   public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
-    //默认1
     RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
         .entryTtl(this.timeToLive)
         .serializeKeysWith(

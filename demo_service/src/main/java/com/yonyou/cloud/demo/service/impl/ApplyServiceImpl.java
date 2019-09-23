@@ -9,7 +9,6 @@ import com.yonyou.cloud.demo.entity.InvApplyVOExample;
 import com.yonyou.cloud.demo.repository.InvApplyBVOMapper;
 import com.yonyou.cloud.demo.repository.InvApplyVOMapper;
 import com.yonyou.cloud.demo.service.ApplyService;
-import com.yonyou.cloud.demo.utils.RedisUtil;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +24,6 @@ public class ApplyServiceImpl implements ApplyService {
 
   @Autowired
   private InvApplyBVOMapper invApplyBVOMapper;
-
-  @Autowired
-  private RedisUtil redisUtil;
-
-  private static int EXPIRE_TIME = 10;
 
   @Override
   @Cacheable(value = RedisKeyConstant.PRACTICE_INVOICE_PREFIX, key = "#fplsh")
