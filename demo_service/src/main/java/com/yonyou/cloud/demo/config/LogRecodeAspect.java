@@ -21,7 +21,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 public class LogRecodeAspect {
 
 
-  @SuppressWarnings("unchecked")
   @Pointcut("execution(public * com.yonyou.cloud.demo.controller.*.*(..)))")
   public void log() {
 
