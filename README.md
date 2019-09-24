@@ -1,42 +1,43 @@
 # my_springcloud
 技术：
-springboot
-	eureka
-	zuul
-	fegin
-restful
-restTemplate
-swagger2
-fastJson
-	fastjson format BigDecimal(保留精度)
-mybatis
+- springboot
+	1.eureka
+	2.zuul
+	3.fegin
+- restful
+- restTemplate
+- swagger2
+- fastJson
+	 1.fastjson format BigDecimal(保留精度)
+- mybatis
 	mybatis-Generator
-redis
+- redis
 	redisTemplate
-JWT
+- JWT
 	AES
   
 开发环境：
-idea
-jdk1.8
-maven
-redis
-mysql
+- idea
+- jdk1.8
+- maven
+- redis
+- mysql
 
 接口包括：
-  创建一个 RESTful Web Service
+  - 创建一个 RESTful Web Service
 	常用注解
 	配置（context-path，port）
 	https://spring.io/guides/gs/rest-service/
-调用 RESTful Web Service
+- 调用 RESTful Web Service
 	RestTemplate 的使用
 	https://spring.io/guides/gs/consuming-rest/
-创建一个上传、下载文件的服务
+- 创建一个上传、下载文件的服务
 	MultipartFile 的应用
 	下载是文件名各浏览器的兼容处理
 	https://spring.io/guides/gs/uploading-files/
-统一处理异常并友好的返回
-限制文件大小及类型
+- 统一处理异常并友好的返回
+- 限制文件大小及类型
+
 
 接口文档：
 ## Hello
