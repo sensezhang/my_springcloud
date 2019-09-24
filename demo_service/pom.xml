@@ -10,32 +10,23 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.yonyou.cloud</groupId>
-  <artifactId>demoService</artifactId>
+  <artifactId>demo_service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>demo</name>
+  <name>demo_service</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
     <java.version>1.8</java.version>
     <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+    <registryUrl>registry.cn-beijing.aliyuncs.com/yonyou/zhangwbin-yonyou</registryUrl>
+    <imageVersion>1.0</imageVersion>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpcore</artifactId>
-      <version>4.4.6</version>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-redis</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5.9</version>
-    </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -133,7 +124,7 @@
           <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>
           <dockerConfigFile>src/main/docker</dockerConfigFile>
           <tag>1.0</tag>
-          <repository>demoService</repository>
+          <repository>demoservice</repository>
           <buildArgs>
             <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
           </buildArgs>

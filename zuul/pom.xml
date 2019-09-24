@@ -84,7 +84,7 @@
         <configuration>
           <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>
           <dockerConfigFile>src/main/docker</dockerConfigFile>
-          <tag>1</tag>
+          <tag>1.0</tag>
           <repository>zuul</repository>
           <buildArgs>
             <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
