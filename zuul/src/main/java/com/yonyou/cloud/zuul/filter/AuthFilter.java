@@ -6,9 +6,10 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import com.yonyou.cloud.util.JWTUtils;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -18,9 +19,11 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @ConfigurationProperties(prefix="filter.url")
+@Getter
+@Setter
 public class AuthFilter extends ZuulFilter {
 
-  private List<String> list = new ArrayList<>();
+  private List<String> lists;
 
   /**
    * 过滤器类型，前置过滤器
@@ -53,7 +56,7 @@ public class AuthFilter extends ZuulFilter {
     HttpServletRequest request = requestContext.getRequest();
 
     //忽略大小写，返回true则拦截，进入run方法
-    if (list.contains(request.getRequestURI())) {
+    if (lists.contains(request.getRequestURI())) {
       return true;
     }
 

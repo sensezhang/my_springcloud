@@ -7,10 +7,10 @@ public class ResultUtils {
 
   private static final BaseResult UNKNOW_ERROR = new BaseResult(ErrorCode.UnknowError);
   private static final BaseResult ILLPARAM_ERROR = new BaseResult(ErrorCode.IllParamError);
-  private static final BaseResult DATA_NOT_EXIST_ERROR = new BaseResult(
-      ErrorCode.DataNotExistError);
+  private static final BaseResult DATA_NOT_EXIST_ERROR = new BaseResult(ErrorCode.DataNotExistError);
   private static final BaseResult FILE_TYPE_ERROR = new BaseResult(ErrorCode.FileTypeError);
   private static final BaseResult FILE_SIZE_ERROR = new BaseResult(ErrorCode.FileSizeError);
+  private static final BaseResult FILE_NOT_EXIST = new BaseResult(ErrorCode.FileNotExist);
 
   public static BaseResult ok(Object data) {
     return new BaseResult(ErrorCode.OK, data);
@@ -35,5 +35,9 @@ public class ResultUtils {
 
   public static BaseResult fileSizeError() {
     return FILE_SIZE_ERROR;
+  }
+
+  public static BaseResult fileNotExistError(){
+    return FILE_NOT_EXIST;
   }
 }

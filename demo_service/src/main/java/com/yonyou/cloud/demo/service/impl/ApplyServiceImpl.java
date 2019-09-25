@@ -26,7 +26,7 @@ public class ApplyServiceImpl implements ApplyService {
   private InvApplyBVOMapper invApplyBVOMapper;
 
   @Override
-  @Cacheable(value = RedisKeyConstant.PRACTICE_INVOICE_PREFIX, key = "#fplsh")
+  @Cacheable(value = RedisKeyConstant.PRACTICE_INVOICE_PREFIX, key = "#fplsh", unless="#result == null")
   public ApplyResponse query(String fplsh) {
     InvApplyVOExample invApplyVOExample = new InvApplyVOExample();
     invApplyVOExample.addPageNumAndPageSize(1, 1).createCriteria().andFpqqlshEqualTo(fplsh);

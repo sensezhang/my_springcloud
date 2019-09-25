@@ -81,7 +81,10 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.48</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
@@ -124,7 +127,7 @@
           <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>
           <dockerConfigFile>src/main/docker</dockerConfigFile>
           <tag>1.0</tag>
-          <repository>demoservice</repository>
+          <repository>demo_service</repository>
           <buildArgs>
             <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
           </buildArgs>

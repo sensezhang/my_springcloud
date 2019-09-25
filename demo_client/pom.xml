@@ -10,9 +10,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.yonyou.cloud</groupId>
-  <artifactId>demoClient</artifactId>
+  <artifactId>demo_client</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>demoClient</name>
+  <name>demo_client</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
@@ -42,6 +42,10 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -98,7 +102,7 @@
           <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>
           <dockerConfigFile>src/main/docker</dockerConfigFile>
           <tag>1.0</tag>
-          <repository>democlient</repository>
+          <repository>demo_client</repository>
           <buildArgs>
             <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
           </buildArgs>

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.Duration;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -22,16 +23,13 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @Slf4j
+@Setter
 @EnableCaching
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
 
   @Value("${redis.cache.expire.time}")
-  private int CacheExpireTime;
-  /**
-   * 过期时间10分钟
-   */
-  private Duration timeToLive = Duration.ofMinutes(CacheExpireTime);
+  private String CacheExpireTime;
 
   @Bean
   @ConditionalOnMissingBean(name = "redisTemplate")
@@ -56,7 +54,7 @@ public class RedisConfig extends CachingConfigurerSupport {
   @Bean
   public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
     RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-        .entryTtl(this.timeToLive)
+        .entryTtl(Duration.ofMinutes(Integer.parseInt(CacheExpireTime)))
         .serializeKeysWith(
             RedisSerializationContext.SerializationPair.fromSerializer(keySerializer()))
         .serializeValuesWith(

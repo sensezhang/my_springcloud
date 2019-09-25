@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zuul-server
+  zipkin:
+    base-url: http://192:168:35:128:9411/
+    service:
+      name: zuul-service
+  sleuth:
+    sampler:
+      #采样率，默认0.1即10%,如需测试时每次都看到trace则修改为1.0，但对性能有影响，注意上线时修改为合理值采样率，默认0.1即10%,如需测试时每次都看到trace则修改为1.0，但对性能有影响，注意上线时修改为合理值
+      probability: 1.0
+
+eureka:
+  instance:
+    hostname: ${spring.cloud.client.ip-address}
+    # 启用ip配置 这样在注册中心列表中看见的是以ip+端口呈现的
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl.defaultZone: http://192.168.35.128:8761/eureka
+
+zuul:
+  routes:
+    sale:
+      path: /practice/**
+      service-id: server-invoker
+
+filter:
+  url:
+    lists:
+      - /practice/invoice/query
+
+
+logging:
+    path: D:/work/logs/zuulService/
+    level:
+      com:
+        yonyou:
+          cloud: debug
+

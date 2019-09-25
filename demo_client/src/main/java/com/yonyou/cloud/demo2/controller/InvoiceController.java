@@ -31,7 +31,7 @@ public class InvoiceController {
     return result.getBody();
   }
 
-  @RequestMapping("/invoice/error/query")
+  @RequestMapping("/invoice/error/query/{id}")
   public String queryErrorToken(@PathVariable("id") String id) {
     URI uri = UriComponentsBuilder.fromUriString(PRACTICE_URL + "invoice/query").build().toUri();
     RequestEntity<String> requestEntity = RequestEntity.post(uri)

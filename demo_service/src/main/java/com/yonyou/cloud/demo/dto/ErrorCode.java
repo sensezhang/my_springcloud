@@ -9,6 +9,7 @@ public enum ErrorCode {
   DataNotExistError("1002", "数据不存在"),
   FileTypeError("1003", "文件类型不合法"),
   FileSizeError("1004", "文件大小不合法"),
+  FileNotExist("1005", "文件不存在"),
   ;
 
   @Getter
