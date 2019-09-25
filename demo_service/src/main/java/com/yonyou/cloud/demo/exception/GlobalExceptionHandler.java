@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
   }
 
   @ExceptionHandler(FileNotFoundException.class)
-  public BaseResult fileNotFoundException(HttpServletRequest request, Throwable ex){
+  public BaseResult fileNotFoundException(HttpServletRequest request, Throwable ex) {
     String requestParam =
         "请求" + request.getRequestURI() + "处理异常,请求的数据是:" + getRequestParams(request);
     log.error(requestParam, ex);

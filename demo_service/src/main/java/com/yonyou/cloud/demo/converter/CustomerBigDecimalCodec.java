@@ -8,8 +8,7 @@ import com.alibaba.fastjson.serializer.SerializeWriter;
 import java.text.DecimalFormat;
 
 /**
- * @author zhangwbin
- * bigDecimal序列化转换器
+ * @author zhangwbin bigDecimal序列化转换器
  */
 public class CustomerBigDecimalCodec extends BigDecimalCodec implements ContextObjectSerializer {
 

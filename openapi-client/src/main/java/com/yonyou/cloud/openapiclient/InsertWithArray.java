@@ -43,7 +43,7 @@ import org.apache.http.util.EntityUtils;
  */
 public class InsertWithArray {
 
-  private String keyPath="C:/Users/Administrator/IdeaProjects/my_springcloud/openapi-client/src/main/resources/certificate/pro22.pfx";
+  private String keyPath = "C:/Users/Administrator/IdeaProjects/my_springcloud/openapi-client/src/main/resources/certificate/pro22.pfx";
 
   //测试环境有测试appid和证书，正式环境有正式appid和证书，请务必对应使用
   //测试环境appid就用这个，正式环境需要替换成正式的

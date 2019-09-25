@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-@ConfigurationProperties(prefix="filter.url")
+@ConfigurationProperties(prefix = "filter.url")
 @Getter
 @Setter
 public class AuthFilter extends ZuulFilter {

@@ -20,7 +20,7 @@ public class FileServiceImpl implements FileService {
   public String generateFileId(String fileName) {
     String id = String.valueOf(System.currentTimeMillis());
     redisUtil.set(RedisKeyConstant.FILE_ID_NAME_PREFIX + id, fileName);
-    redisUtil.expire(RedisKeyConstant.FILE_ID_NAME_PREFIX + id, 60*60);
+    redisUtil.expire(RedisKeyConstant.FILE_ID_NAME_PREFIX + id, 60 * 60);
     return id;
   }
 

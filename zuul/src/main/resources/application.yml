@@ -10,13 +10,13 @@ spring:
       name: zuul-service
   sleuth:
     sampler:
-      #采样率，默认0.1即10%,如需测试时每次都看到trace则修改为1.0，但对性能有影响，注意上线时修改为合理值采样率，默认0.1即10%,如需测试时每次都看到trace则修改为1.0，但对性能有影响，注意上线时修改为合理值
+      #锟斤拷锟斤拷锟绞ｏ拷默锟斤拷0.1锟斤拷10%,锟斤拷锟斤拷锟斤拷锟绞泵匡拷味锟斤拷锟斤拷锟絫race锟斤拷锟睫革拷为1.0锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷影锟届，注锟斤拷锟斤拷锟斤拷时锟睫革拷为锟斤拷锟斤拷值锟斤拷锟斤拷锟绞ｏ拷默锟斤拷0.1锟斤拷10%,锟斤拷锟斤拷锟斤拷锟绞泵匡拷味锟斤拷锟斤拷锟絫race锟斤拷锟睫革拷为1.0锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷影锟届，注锟斤拷锟斤拷锟斤拷时锟睫革拷为锟斤拷锟斤拷值
       probability: 1.0
 
 eureka:
   instance:
     hostname: ${spring.cloud.client.ip-address}
-    # 启用ip配置 这样在注册中心列表中看见的是以ip+端口呈现的
+    # 锟斤拷锟斤拷ip锟斤拷锟斤拷 锟斤拷锟斤拷锟斤拷注锟斤拷锟斤拷锟斤拷锟叫憋拷锟叫匡拷锟斤拷锟斤拷锟斤拷锟斤拷ip+锟剿口筹拷锟街碉拷
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
@@ -35,9 +35,9 @@ filter:
 
 
 logging:
-    path: D:/work/logs/zuulService/
-    level:
-      com:
-        yonyou:
-          cloud: debug
+  path: D:/work/logs/zuulService/
+  level:
+    com:
+      yonyou:
+        cloud: debug
 
